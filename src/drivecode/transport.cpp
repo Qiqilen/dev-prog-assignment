@@ -20,6 +20,8 @@ void update_transport_motor() {
         default:
             transport_motor.move_velocity(0);
     }
+
+    pros::delay(10);
 }
 
 void update_transport_state() {
