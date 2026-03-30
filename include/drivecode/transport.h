@@ -5,4 +5,7 @@
 
 extern pros::Motor transport_motor;
 
+void update_transport_state();
+void update_transport_motor();
+
 #endif

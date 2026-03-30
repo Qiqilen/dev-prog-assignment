@@ -3,6 +3,7 @@
 #include "drivecode/objects.h"
 #include "drivecode/intake.h"
 #include "drivecode/transport.h"
+#include "drivecode/pistons.h"
 
 /**
  * A callback function for LLEMU's center button.
@@ -28,6 +29,7 @@ void on_center_button() {
  */
 void initialize() {
 	pros::Task intake_task(update_intakemotor, "Intake");
+	pros::Task transport_task(update_transport_motor, "Transport");
 
 	pros::lcd::initialize();
 	pros::lcd::set_text(1, "Hello PROS User!");
@@ -87,6 +89,10 @@ void opcontrol() {
 		chassis.arcade(throttle, turn);
 
 		change_intake_state();
+		update_transport_state();
+		update_wing();
+		update_trapdoor();
+		update_matchloader();
 
 		pros::delay(10);
 

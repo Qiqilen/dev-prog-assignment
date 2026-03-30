@@ -3,6 +3,8 @@
 
 #include "main.h"
 
+//define all drivetrain objects here
+
 extern pros::MotorGroup left_motors;
 extern pros::MotorGroup right_motors;
 
